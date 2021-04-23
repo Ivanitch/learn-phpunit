@@ -1,0 +1,24 @@
+{
+    "name": "ivanitch/learn-phpunit",
+    "description": "phpunit personal manual",
+    "minimum-stability": "stable",
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "php": "^7.4|^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    }
+}

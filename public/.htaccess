@@ -1,0 +1,11 @@
+AddDefaultCharset UTF-8
+<IfModule mod_rewrite.c>
+  Options All -Indexes
+  # Включаем mod_rewrite
+  RewriteEngine On
+  # Если это папка или файл, открываем её/его
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteRule ^(.+)$ index.php [L]
+</IfModule>
