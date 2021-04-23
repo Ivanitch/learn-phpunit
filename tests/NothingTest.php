@@ -14,6 +14,6 @@ class NothingTest extends TestCase
 
     public function testNothingTest()
     {
-        $this->assertEquals('test', \App\Nothing::test());
+        $this->assertSame('test', \App\Nothing::test());
     }
 }

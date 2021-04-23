@@ -6,7 +6,8 @@
         "sort-packages": true
     },
     "require": {
-        "php": "^7.4|^8.0"
+        "php": "^7.4|^8.0",
+        "ext-pdo": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "*"
@@ -23,6 +24,6 @@
     },
     "scripts": {
         "test": "phpunit --colors=always",
-        "test-docs": "phpunit tests/Documentation --colors=always"
+        "test-docs": "phpunit tests/documentation --colors=always"
     }
 }
