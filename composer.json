@@ -20,5 +20,9 @@
         "psr-4": {
             "Tests\\": "tests/"
         }
+    },
+    "scripts": {
+        "test": "phpunit --colors=always",
+        "test-docs": "phpunit tests/Documentation --colors=always"
     }
 }

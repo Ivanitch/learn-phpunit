@@ -11,6 +11,10 @@ composer install
 
 // Run test
 vendor/bin/phpunit
+
+// Or
+composer test
+composer test-docs
  ```
 
 ## Documentation
