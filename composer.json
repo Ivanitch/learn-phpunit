@@ -25,6 +25,7 @@
     "scripts": {
         "test": "phpunit --colors=always",
         "test-docs": "phpunit tests/documentation --colors=always",
+        "test-docs-asserts": "phpunit tests/documentation/assertions --colors=always",
         "test-calc": "phpunit tests/calculator --colors=always"
     }
 }
