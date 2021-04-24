@@ -16,10 +16,15 @@ make serve
 ```
 // Run test
 vendor/bin/phpunit
+vendor/bin/phpunit tests/documentation
+vendor/bin/phpunit tests/documentation/section2
+
+vendor/bin/phpunit tests/calculator
 
 // Or
 composer test
 composer test-docs
+composer test-calc
  ```
 
 ## Documentation
