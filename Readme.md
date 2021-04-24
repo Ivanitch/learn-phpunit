@@ -20,11 +20,13 @@ vendor/bin/phpunit tests/documentation
 vendor/bin/phpunit tests/documentation/section2
 
 vendor/bin/phpunit tests/calculator
+vendor/bin/phpunit tests/assertions
 
 // Or
 composer test
 composer test-docs
 composer test-calc
+composer test-docs-asserts
  ```
 
 ## Documentation
