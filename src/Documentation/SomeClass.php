@@ -1,6 +1,6 @@
 <?php
 
-namespace App\documentation;
+namespace App\Documentation;
 
 class SomeClass
 {
