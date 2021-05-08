@@ -4,23 +4,18 @@
 ``` 
 git clone git@github.com:Ivanitch/learn-phpunit.git .
 ``` 
-## Run project
+## Install packages
 ``` 
-// Install packeges
 composer install
-
-// Run server
-make serve
 ```
 ## Run tests
 ```
 // Run test
 vendor/bin/phpunit
+vendor/bin/phpunit tests/calculator
 vendor/bin/phpunit tests/documentation
 vendor/bin/phpunit tests/documentation/section2
-
-vendor/bin/phpunit tests/calculator
-vendor/bin/phpunit tests/assertions
+vendor/bin/phpunit tests/documentation/assertions
 
 // Or
 composer test
