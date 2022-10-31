@@ -2,7 +2,7 @@
 
 namespace Tests\documentation\section9;
 
-use App\documentation\SomeClass;
+use App\Documentation\SomeClass;
 use PHPUnit\Framework\TestCase;
 
 class StubTest extends TestCase
