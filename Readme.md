@@ -3,6 +3,7 @@
 ## Install project
 ``` 
 git clone git@github.com:Ivanitch/learn-phpunit.git .
+sh ./start.sh
 ``` 
 ## Install packages
 ``` 

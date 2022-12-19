@@ -1,5 +1,7 @@
 .idea
-vendor
-phpunit.xml
-phpunit.phar
-.phpunit.result.cache
+app/vendor
+app/phpunit.xml
+app/phpunit.phar
+app/.phpunit.result.cache
+docker/log
+docker/mysql/data
