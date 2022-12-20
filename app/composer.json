@@ -24,6 +24,9 @@
         }
     },
     "scripts": {
+        "test-config": [
+            "cp ./phpunit.xml.dist ./phpunit.xml"
+        ],
         "test": "phpunit --colors=always",
         "test-docs": "phpunit tests/documentation --colors=always",
         "test-docs-asserts": "phpunit tests/documentation/assertions --colors=always",

@@ -19,7 +19,8 @@
         timeoutForSmallTests="1"
         timeoutForMediumTests="10"
         timeoutForLargeTests="60"
-        verbose="false">
+        verbose="false"
+>
     <!--coverage processUncoveredFiles="true">
         <include>
             <directory suffix=".php">./src</directory>
@@ -30,7 +31,7 @@
     </coverage-->
     <testsuites>
         <testsuite name="Unit">
-            <directory suffix="Test.php">./tests</directory>
+            <directory suffix="Test.php">./tests/</directory>
         </testsuite>
     </testsuites>
 </phpunit>
