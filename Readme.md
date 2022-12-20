@@ -4,6 +4,9 @@
 ``` 
 git clone git@github.com:Ivanitch/learn-phpunit.git .
 sh ./start.sh
+
+composer install
+composer test-config
 ``` 
 ## Install packages
 ``` 
