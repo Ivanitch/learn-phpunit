@@ -4,7 +4,6 @@ namespace Tests\course;
 
 use App\Course\User;
 use InvalidArgumentException;
-use PHPUnit\Framework\Error\Error;
 use PHPUnit\Framework\TestCase;
 
 class UserTest extends TestCase
