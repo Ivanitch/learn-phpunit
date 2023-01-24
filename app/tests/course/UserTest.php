@@ -3,6 +3,8 @@
 namespace Tests\course;
 
 use App\Course\User;
+use InvalidArgumentException;
+use PHPUnit\Framework\Error\Error;
 use PHPUnit\Framework\TestCase;
 
 class UserTest extends TestCase
@@ -39,5 +41,17 @@ class UserTest extends TestCase
 
         // 28 === $this->user->getAge()
         $this->assertSame(28, $this->user->getAge());
+    }
+
+    /**
+     * Тест на то, что в методе setEmail() при невалидном email будет исключение
+     * @return void
+     */
+    public function testEmailException(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionCode(10);
+        $this->expectExceptionMessage('Invalid Email');
+        $this->user->setEmail('john@___mail.com');
     }
 }

@@ -11,7 +11,8 @@
         "ext-json": "*"
     },
     "require-dev": {
-        "phpunit/phpunit": "*"
+        "phpunit/phpunit": "*",
+        "symfony/var-dumper": "^6.2"
     },
     "autoload": {
         "psr-4": {
