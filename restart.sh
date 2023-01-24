@@ -5,5 +5,5 @@ sudo systemctl stop mysql
 echo 'Mysql stopped'
 
 docker stop $(docker ps -qa)
-make build
+make restart
 make server
