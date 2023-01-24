@@ -21,6 +21,7 @@ composer test-config
 ./vendor/bin/phpunit tests/documentation
 ./vendor/bin/phpunit tests/documentation/section2
 ./vendor/bin/phpunit tests/documentation/assertions
+./vendor/bin/phpunit tests/course
 
 ### Or
 composer test
