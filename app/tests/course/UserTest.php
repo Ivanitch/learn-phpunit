@@ -53,4 +53,37 @@ class UserTest extends TestCase
         $this->expectExceptionMessage('Invalid Email');
         $this->user->setEmail('john@___mail.com');
     }
+
+    /**
+     * Вывод на экран точного вхождение строки
+     * @return void
+     */
+    public function testEchoName(): void
+    {
+        $this->expectOutputString('John');
+        echo $this->user->getName();
+    }
+
+    /**
+     * Вывод на экран строки удовлетворяющей регулярному выражению
+     * @return void
+     */
+    public function testEchoString(): void
+    {
+        $this->expectOutputRegex('/[\w\-]+/');
+        echo $this->user->getName();
+    }
+
+    /**
+     * Можно предварительно обработать ожидаемое значение
+     * @return void
+     */
+    public function testEchoStringByCallback(): void
+    {
+        $this->expectOutputString('John');
+        $this->setOutputCallback(function ($string) {
+            return trim($string);
+        });
+        echo $this->user->getName();
+    }
 }
