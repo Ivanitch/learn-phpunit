@@ -1,67 +1,48 @@
-version: "3"
-
+version: '3'
 services:
   web:
-    image: nginx:${NGINX_VERSION}
-    container_name: ${APP_NAME}_nginx
+    image: 'nginx:${NGINX_VERSION}'
+    container_name: '${APP_NAME}_nginx'
     ports:
-      - "80:80"
-      - "443:443"
-    restart: always
+      - '80:80'
+      - '443:443'
     volumes:
-      - "./docker/nginx/conf.d/site.conf:/etc/nginx/conf.d/site.conf"
-      - "./docker/log/nginx:/var/log/nginx"
-      - "./docker/nginx/ssl:/etc/nginx/ssl"
-      - "./app:/var/www/html"
+      - './docker/nginx/conf.d/site.conf:/etc/nginx/conf.d/site.conf'
+      - './docker/log/nginx:/var/log/nginx'
+      - './docker/nginx/ssl:/etc/nginx/ssl'
+      - './app:/var/www/html'
     depends_on:
       - php-fpm
       - mysqldb
     networks:
       default:
         aliases:
-          - ${NGINX_HOST}
+          - '${NGINX_HOST}'
   php-fpm:
-    build: "./docker/php"
-    container_name: ${APP_NAME}_php-fpm
-    restart: always
+    build: ./docker/php
+    container_name: '${APP_NAME}_php-fpm'
     volumes:
-      - "./docker/php/conf.d/custom.ini:/usr/local/etc/php/conf.d/custom.ini"
-      - "./app:/var/www/html"
+      - './docker/php/conf.d/custom.ini:/usr/local/etc/php/conf.d/custom.ini'
+      - './app:/var/www/html'
     depends_on:
       - mysqldb
     networks:
       - default
   mysqldb:
-    image: mariadb:${MARIA_VERSION}
-    container_name: ${APP_NAME}_${MARIA_HOST}
-    restart: always
+    image: 'mariadb:${MARIA_VERSION}'
+    container_name: '${APP_NAME}_${MARIA_HOST}'
     environment:
-      - MYSQL_DATABASE=${MARIA_DATABASE}
-      - MYSQL_ROOT_PASSWORD=${MARIA_ROOT_PASSWORD}
-      - MYSQL_USER=${MARIA_USER}
-      - MYSQL_PASSWORD=${MARIA_PASSWORD}
+      - 'MYSQL_DATABASE=${MARIA_DATABASE}'
+      - 'MYSQL_ROOT_PASSWORD=${MARIA_ROOT_PASSWORD}'
+      - 'MYSQL_USER=${MARIA_USER}'
+      - 'MYSQL_PASSWORD=${MARIA_PASSWORD}'
     ports:
-      - "3306:3306"
+      - '3306:3306'
     volumes:
-      - "./docker/mysql/data/db/mysql:/var/lib/mysql"
-      - "./docker/log/mysql:/var/log/mysql"
-      - "./docker/mysql/conf.d/my.conf:/etc/mysql/conf.d/my.cnf"
-      #- "./docker/mysql/dump:/docker-entrypoint-initdb.d"
-      - "./app:/var/www/html"
-    networks:
-      - default
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin:${PMA_VERSION}
-    container_name: ${APP_NAME}_phpmyadmin
-    ports:
-      - "8080:80"
-    environment:
-      - PMA_ARBITRARY=1
-      - PMA_HOST=${MARIA_HOST}
-    restart: always
-    depends_on:
-      - php-fpm
-      - mysqldb
+      - './docker/mysql/data/db/mysql:/var/lib/mysql'
+      - './docker/log/mysql:/var/log/mysql'
+      - './docker/mysql/conf.d/my.conf:/etc/mysql/conf.d/my.cnf'
+      - './app:/var/www/html'
     networks:
       - default
 networks:
